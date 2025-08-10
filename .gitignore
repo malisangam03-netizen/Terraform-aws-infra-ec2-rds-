@@ -1,0 +1,17 @@
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+crash.log
+*.tfvars
+*.tfvars.json
+
+# Local env / keys
+*.pem
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
