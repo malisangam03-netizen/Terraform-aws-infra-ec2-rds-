@@ -17,5 +17,4 @@ db_allocated_storage = "20"
 db_name              = "appdb"
 db_username          = "appuser"
 # REPLACE with a secure password or use TF_VAR_db_password env var
-db_password          = "ChangeMe_Secure123!"
 db_port              = "5432"
