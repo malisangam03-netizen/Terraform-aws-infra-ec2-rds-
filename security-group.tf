@@ -1,6 +1,6 @@
 resource "aws_security_group" "web_sg" {
-  name        = "web-server-sg-${var.environment}"
-  description = "Security group for web server"
+  name        = "${var.project_name}-web-sg-${var.environment}"
+  description = "Security group for ${var.project_name} web server"
   vpc_id      = data.aws_vpc.default.id
 
   ingress {
@@ -36,7 +36,7 @@ resource "aws_security_group" "web_sg" {
   }
 
   tags = {
-    Name        = "web-sg-${var.environment}"
+    Name        = "${var.project_name}-web-sg-${var.environment}"
     Environment = var.environment
   }
 }

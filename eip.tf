@@ -3,7 +3,7 @@ resource "aws_eip" "web_eip" {
   domain   = "vpc"
 
   tags = {
-    Name        = "web-eip-${var.environment}"
+    Name        = "${var.project_name}-eip-${var.environment}"
     Environment = var.environment
   }
 }

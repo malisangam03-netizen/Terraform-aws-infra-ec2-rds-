@@ -5,6 +5,7 @@ ami_id        = "ami-0d54604676873b4ec"
 instance_type = "t2.micro"
 key_name      = "test"
 environment   = "dev"
+project_name  = "demo"
 office_ip     = "45.64.206.4/32"
 volume_size   = "10"
 

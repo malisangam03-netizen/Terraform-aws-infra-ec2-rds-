@@ -15,7 +15,7 @@ resource "aws_instance" "web" {
   }
 
   tags = {
-    Name        = "ec2-${var.environment}"
+    Name        = "${var.project_name}-ec2-${var.environment}"
     Environment = var.environment
   }
 

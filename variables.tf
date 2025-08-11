@@ -5,6 +5,7 @@ variable "ami_id" {}
 variable "instance_type" {}
 variable "key_name" {}
 variable "environment" {}
+variable "project_name" {}
 variable "office_ip" {}
 variable "volume_size" {}
 

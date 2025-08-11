@@ -1,17 +1,17 @@
 resource "aws_db_subnet_group" "rds_subnet_group" {
-  name        = "rds-subnet-group-${var.environment}"
+  name        = "${var.project_name}-rds-subnet-group-${var.environment}"
   description = "RDS subnet group"
   subnet_ids  = data.aws_subnets.default.ids
 
   tags = {
-    Name        = "rds-subnet-group-${var.environment}"
+    Name        = "${var.project_name}-rds-subnet-group-${var.environment}"
     Environment = var.environment
   }
 }
 
 resource "aws_security_group" "rds_sg" {
-  name        = "rds-sg-${var.environment}"
-  description = "Security group for RDS allowing DB access from web SG"
+  name        = "${var.project_name}-rds-sg-${var.environment}"
+  description = "Security group for ${var.project_name} RDS allowing DB access from web SG"
   vpc_id      = data.aws_vpc.default.id
 
   ingress {
@@ -31,13 +31,13 @@ resource "aws_security_group" "rds_sg" {
   }
 
   tags = {
-    Name        = "rds-sg-${var.environment}"
+    Name        = "${var.project_name}-rds-sg-${var.environment}"
     Environment = var.environment
   }
 }
 
 resource "aws_db_instance" "rds" {
-  identifier                  = "rds-${var.environment}"
+  identifier                  = "${var.project_name}-rds-${var.environment}"
   allocated_storage           = var.db_allocated_storage
   engine                      = var.db_engine
   engine_version              = var.db_engine_version
@@ -57,7 +57,7 @@ resource "aws_db_instance" "rds" {
   deletion_protection         = false
 
   tags = {
-    Name        = "rds-${var.environment}"
+    Name        = "${var.project_name}-rds-${var.environment}"
     Environment = var.environment
   }
 }
